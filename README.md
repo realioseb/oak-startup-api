@@ -37,10 +37,8 @@ Run built
 yarn start:prod
 ```
 
-<hr />
-Or start (without building) and watch file changes
+Start (without building) and watch file changes
 ```
 yarn start:dev
 ```
 
-<br />
