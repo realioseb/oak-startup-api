@@ -1,5 +1,5 @@
 import { UserInputError, ForbiddenError } from 'apollo-server';
-import { Resolver } from '../interface/resolver';
+import { Resolver } from '../core/resolver';
 
 export class TaskResolver extends Resolver {
   find() {
@@ -40,7 +40,7 @@ export class TaskResolver extends Resolver {
     return this.taskRepo.update(id, { isComplete: true });
   }
 
-  markInomplete(id: number) {
+  markIncomplete(id: number) {
     const task = this.taskRepo.findOne(id);
 
     if (!task) {

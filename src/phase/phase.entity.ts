@@ -1,6 +1,6 @@
 import { taskRepository } from '../task/task.repository';
 import { Task } from '../task/task.entity';
-import { Entity } from '../interface/repository';
+import { Entity } from '../core/repository';
 
 export class Phase {
   id?: number;

@@ -4,11 +4,6 @@
 Manage tasks and phases of your startup
 </p>
 
-### Prerequisites
-
-- Node 14.17.3 or higher
-- Yarn 1.22.10 or higher
-
 ### Setting up
 
 1. Install dependencies:
@@ -38,7 +33,7 @@ yarn start:prod
 ```
 
 Start (without building) and watch file changes
+
 ```
 yarn start:dev
 ```
-

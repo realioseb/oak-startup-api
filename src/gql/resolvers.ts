@@ -25,6 +25,6 @@ export const resolvers = {
     completeTask: (_: any, args: { id: number }) =>
       taskResolver.markCompleted(args.id),
     incompleteTask: (_: any, args: { id: number }) =>
-      taskResolver.markInomplete(args.id),
+      taskResolver.markIncomplete(args.id),
   },
 };
