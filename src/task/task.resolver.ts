@@ -7,6 +7,10 @@ export class TaskResolver extends Resolver {
   }
 
   insert(name: string, phaseId: number) {
+    if (!name) {
+      throw new UserInputError('name required');
+    }
+
     const phase = this.phaseRepo.findOne(phaseId);
 
     if (!phase) {
@@ -21,6 +25,10 @@ export class TaskResolver extends Resolver {
   }
 
   update(id: number, name: string) {
+    if (!name) {
+      throw new UserInputError('name required');
+    }
+
     return this.taskRepo.update(id, { name });
   }
 

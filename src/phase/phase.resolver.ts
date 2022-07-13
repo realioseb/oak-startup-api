@@ -1,3 +1,4 @@
+import { UserInputError } from 'apollo-server';
 import { Resolver } from '../core/core.resolver';
 import { Phase } from './phase.entity';
 
@@ -7,6 +8,10 @@ export class PhaseResolver extends Resolver {
   }
 
   insert(name: string) {
+    if (!name) {
+      throw new UserInputError('name-required');
+    }
+
     const phase = new Phase();
     phase.name = name;
 
@@ -14,6 +19,10 @@ export class PhaseResolver extends Resolver {
   }
 
   update(id: number, name: string) {
+    if (!name) {
+      throw new UserInputError('name-required');
+    }
+
     return this.phaseRepo.update(id, { name });
   }
 
