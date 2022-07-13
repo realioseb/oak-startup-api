@@ -1,4 +1,4 @@
-import { Resolver } from '../core/resolver';
+import { Resolver } from '../core/core.resolver';
 import { Phase } from './phase.entity';
 
 export class PhaseResolver extends Resolver {

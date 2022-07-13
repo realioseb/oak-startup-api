@@ -1,5 +1,5 @@
 import { UserInputError } from 'apollo-server';
-import { Entity, Repository } from '../core/repository';
+import { Entity, Repository } from '../core/core.repository';
 import { Task } from './task.entity';
 
 export class TaskRepository extends Repository<Task> {

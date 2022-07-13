@@ -1,5 +1,5 @@
 import { UserInputError } from 'apollo-server';
-import { Repository } from '../core/repository';
+import { Repository } from '../core/core.repository';
 import { Phase } from './phase.entity';
 
 export class PhaseRepository extends Repository<Phase> {

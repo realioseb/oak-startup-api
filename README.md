@@ -20,19 +20,19 @@ PORT=8000
 
 ### Start
 
-Build project
+Create production build
 
 ```
 yarn build
 ```
 
-Run built
+Run production build
 
 ```
 yarn start:prod
 ```
 
-Start (without building) and watch file changes
+Run development mode and watch file changes
 
 ```
 yarn start:dev

@@ -1,4 +1,4 @@
-import { Entity } from '../core/repository';
+import { Entity } from '../core/core.repository';
 import { Phase } from '../phase/phase.entity';
 
 export class Task {

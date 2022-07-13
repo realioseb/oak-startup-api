@@ -1,5 +1,5 @@
 import { UserInputError, ForbiddenError } from 'apollo-server';
-import { Resolver } from '../core/resolver';
+import { Resolver } from '../core/core.resolver';
 
 export class TaskResolver extends Resolver {
   find() {

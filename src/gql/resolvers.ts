@@ -4,27 +4,27 @@ import { PhaseResolver } from '../phase/phase.resolver';
 const phaseResolver = new PhaseResolver();
 const taskResolver = new TaskResolver();
 
+const handler = <ARG = any, TYPE = any>(callback: (args: ARG) => TYPE) => {
+  return (_: any, args: ARG) => {
+    return callback(args);
+  };
+};
+
 export const resolvers = {
   Query: {
     findPhases: () => phaseResolver.find(),
     findTasks: () => taskResolver.find(),
   },
-  // TODO: (maybe) refactor it to be more readable
   Mutation: {
-    insertPhase: (_: any, args: { name: string }) =>
-      phaseResolver.insert(args.name),
-    updatePhase: (_: any, args: { id: number; name: string }) =>
-      phaseResolver.update(args.id, args.name),
-    removePhase: (_: any, args: { id: number }) =>
-      phaseResolver.remove(args.id),
-    insertTask: (_: any, args: { name: string; phaseId: number }) =>
-      taskResolver.insert(args.name, args.phaseId),
-    updateTask: (_: any, args: { id: number; name: string }) =>
-      taskResolver.update(args.id, args.name),
-    removeTask: (_: any, args: { id: number }) => taskResolver.remove(args.id),
-    completeTask: (_: any, args: { id: number }) =>
-      taskResolver.markCompleted(args.id),
-    incompleteTask: (_: any, args: { id: number }) =>
-      taskResolver.markIncomplete(args.id),
+    insertPhase: handler(({ name }) => phaseResolver.insert(name)),
+    updatePhase: handler(({ id, name }) => phaseResolver.update(id, name)),
+    removePhase: handler(({ id }) => phaseResolver.remove(id)),
+    insertTask: handler(({ name, phaseId }) =>
+      taskResolver.insert(name, phaseId),
+    ),
+    updateTask: handler(({ id, name }) => taskResolver.update(id, name)),
+    removeTask: handler(({ id }) => taskResolver.remove(id)),
+    completeTask: handler(({ id }) => taskResolver.markCompleted(id)),
+    incompleteTask: handler(({ id }) => taskResolver.markIncomplete(id)),
   },
 };
