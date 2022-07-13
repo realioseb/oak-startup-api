@@ -1,39 +1,34 @@
-## My Startup Progress
+# My Startup Progress
 
-<p>
-Manage tasks and phases of your startup
-</p>
-
-### Setting up
-
-1. Install dependencies:
+## Install
 
 ```
 yarn install
 ```
 
-2. Create `.env` file and insert data according to `.env.example` file which is located in the root directory. For example:
+## Environment variables
 
 ```
 PORT=8000
 ```
 
-### Start
+Create `.env` file and fill it according to the `.env.example` file which is located in the root directory.
 
-Create production build
+## Create production build
 
 ```
 yarn build
 ```
 
-Run production build
+## Run production build
 
 ```
 yarn start:prod
 ```
 
-Run development mode and watch file changes
+## Run development mode and watch file changes
 
 ```
 yarn start:dev
 ```
+
